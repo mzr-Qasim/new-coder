@@ -1,3 +1,8 @@
+AOS.init();
+
+
+
+
 const lightbox = GLightbox({
   selector: '.glightbox'
 });
@@ -14,3 +19,6 @@ document.querySelectorAll('.offcanvas-body .nav-link').forEach(link => {
       }
     });
   });
+
+
+

@@ -12205,6 +12205,11 @@ ul.social-media-link li.custom-social-media-link:hover a i {
   font-size: 1.2rem;
 }
 
+.offcanvas .offcanvas-body li a {
+  color: #000;
+  font-size: clamp(1.5rem, 1vw, 4rem);
+}
+
 .main-content video {
   position: fixed;
   top: 0;
@@ -12222,14 +12227,15 @@ ul.social-media-link li.custom-social-media-link:hover a i {
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
-  gap: 10rem;
 }
 
 .aside-wrapper {
-  padding: 4.5rem 0;
+  padding-top: 4.5rem;
   width: clamp(260px, 30vw, 450px);
-  position: sticky;
-  top: 4.5rem;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
 }
 
 aside.aside-main-hero {
@@ -12266,7 +12272,7 @@ aside.aside-main-hero .info h4 span, aside.aside-main-hero .info .h4 span {
 }
 
 .content-inner {
-  flex: 1;
+  margin-left: calc(clamp(260px, 30vw, 450px) + 5rem);
   height: 100%;
   padding: 10rem 0;
 }
@@ -12332,6 +12338,9 @@ section.skills-section .col-inner .skills-box {
 }
 section.skills-section .col-inner img {
   width: clamp(6rem, 5vw, 10rem);
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 section.portfolio-section .portfolio-gallery .col-inner {
@@ -12371,7 +12380,7 @@ section.portfolio-section .portfolio-gallery .col-inner a.project-link {
   visibility: hidden;
   z-index: 3;
   color: #fff;
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 1vw, 1.3rem);
   margin-bottom: 2rem;
   text-transform: capitalize;
 }
@@ -12399,18 +12408,18 @@ section.portfolio-section .portfolio-gallery .col-inner:hover::after {
   transform: translateX(0);
 }
 
-@media (max-width: 1200px) {
-  .main-content-inner {
-    gap: 5rem;
-  }
-}
 @media (max-width: 991px) {
   .main-content-inner {
+    display: flex;
+    align-items: center;
     flex-direction: column;
   }
   .aside-wrapper {
-    width: 100%;
     position: static;
+    top: auto;
+    transform: none;
+    width: 100%;
+    padding-top: 8rem;
   }
   .aside-wrapper .aside-main-hero {
     display: block;
@@ -12419,6 +12428,7 @@ section.portfolio-section .portfolio-gallery .col-inner:hover::after {
     aspect-ratio: 1/0.65;
   }
   .content-inner {
+    margin-left: 0;
     padding: 0;
   }
 }

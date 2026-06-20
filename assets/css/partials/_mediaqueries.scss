@@ -1,17 +1,19 @@
-@media (max-width: 1200px) {
-  .main-content-inner {
-    gap: 5rem;
-  }
-}
+
 
 @media (max-width: 991px) {
   .main-content-inner {
+    display: flex;
+    align-items: center;
     flex-direction: column;
   }
 
   .aside-wrapper {
+  position: static;
+    top: auto;
+    transform: none;
     width: 100%;
-    position: static;
+    padding-top: 8rem;
+
 
     .aside-main-hero {
       display: block;
@@ -22,6 +24,7 @@
   }
 
   .content-inner {
+    margin-left: 0;
     padding: 0;
   }
 }
